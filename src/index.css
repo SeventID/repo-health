@@ -1,0 +1,183 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Semantic health/status colors — flat, print-like, readable on ink text */
+  --color-health-ok: var(--health-ok);
+  --color-health-warn: var(--health-warn);
+  --color-health-stale: var(--health-stale);
+  --color-health-risk: var(--health-risk);
+  --color-health-ok-soft: var(--health-ok-soft);
+  --color-health-warn-soft: var(--health-warn-soft);
+  --color-health-stale-soft: var(--health-stale-soft);
+  --color-health-risk-soft: var(--health-risk-soft);
+}
+
+/* Square corners everywhere — neobrutalism foundation */
+:root {
+  --radius: 0rem;
+
+  /* Light theme: warm paper + ink, flat color blocks, strong ink borders */
+  --background: oklch(0.955 0.012 85);
+  --foreground: oklch(0.19 0.008 70);
+  --card: oklch(0.985 0.006 90);
+  --card-foreground: oklch(0.19 0.008 70);
+  --popover: oklch(0.985 0.006 90);
+  --popover-foreground: oklch(0.19 0.008 70);
+  --primary: oklch(0.19 0.008 70);
+  --primary-foreground: oklch(0.955 0.012 85);
+  --secondary: oklch(0.92 0.01 85);
+  --secondary-foreground: oklch(0.19 0.008 70);
+  --muted: oklch(0.925 0.01 85);
+  --muted-foreground: oklch(0.46 0.014 70);
+  --accent: oklch(0.19 0.008 70);
+  --accent-foreground: oklch(0.955 0.012 85);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.24 0.01 75);
+  --input: oklch(0.24 0.01 75);
+  --ring: oklch(0.19 0.008 70);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.96 0.012 85);
+  --sidebar-foreground: oklch(0.19 0.008 70);
+  --sidebar-primary: oklch(0.19 0.008 70);
+  --sidebar-primary-foreground: oklch(0.955 0.012 85);
+  --sidebar-accent: oklch(0.9 0.01 85);
+  --sidebar-accent-foreground: oklch(0.19 0.008 70);
+  --sidebar-border: oklch(0.86 0.012 85);
+  --sidebar-ring: oklch(0.19 0.008 70);
+
+  --health-ok: oklch(0.79 0.18 145);
+  --health-warn: oklch(0.86 0.17 95);
+  --health-stale: oklch(0.72 0.18 55);
+  --health-risk: oklch(0.63 0.2 27);
+  --health-ok-soft: oklch(0.93 0.06 150);
+  --health-warn-soft: oklch(0.95 0.07 95);
+  --health-stale-soft: oklch(0.93 0.07 60);
+  --health-risk-soft: oklch(0.93 0.05 30);
+}
+
+/* Dark theme is the default experience: near-black ink paper, ivory foreground */
+.dark {
+  --background: oklch(0.16 0.005 70);
+  --foreground: oklch(0.94 0.01 85);
+  --card: oklch(0.21 0.006 70);
+  --card-foreground: oklch(0.94 0.01 85);
+  --popover: oklch(0.21 0.006 70);
+  --popover-foreground: oklch(0.94 0.01 85);
+  --primary: oklch(0.94 0.01 85);
+  --primary-foreground: oklch(0.16 0.005 70);
+  --secondary: oklch(0.28 0.008 70);
+  --secondary-foreground: oklch(0.94 0.01 85);
+  --muted: oklch(0.27 0.007 70);
+  --muted-foreground: oklch(0.68 0.014 80);
+  --accent: oklch(0.3 0.008 70);
+  --accent-foreground: oklch(0.94 0.01 85);
+  --destructive: oklch(0.63 0.21 27);
+  --border: oklch(1 0 0 / 32%);
+  --input: oklch(0.94 0.01 85 / 55%);
+  --ring: oklch(0.68 0.014 80);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.19 0.006 70);
+  --sidebar-foreground: oklch(0.94 0.01 85);
+  --sidebar-primary: oklch(0.94 0.01 85);
+  --sidebar-primary-foreground: oklch(0.16 0.005 70);
+  --sidebar-accent: oklch(0.28 0.008 70);
+  --sidebar-accent-foreground: oklch(0.94 0.01 85);
+  --sidebar-border: oklch(1 0 0 / 14%);
+  --sidebar-ring: oklch(0.68 0.014 80);
+
+  --health-ok: oklch(0.75 0.19 148);
+  --health-warn: oklch(0.85 0.17 95);
+  --health-stale: oklch(0.7 0.19 55);
+  --health-risk: oklch(0.62 0.21 27);
+  --health-ok-soft: oklch(0.24 0.05 148);
+  --health-warn-soft: oklch(0.26 0.05 95);
+  --health-stale-soft: oklch(0.26 0.05 60);
+  --health-risk-soft: oklch(0.27 0.06 30);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: var(--health-warn);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  /* Thin square scrollbars that fit the flat aesthetic */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .brutal-label {
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground;
+  }
+  .brutal-box {
+    @apply border-2 border-foreground bg-card;
+  }
+  .brutal-chip {
+    @apply inline-flex items-center gap-1.5 border-2 border-foreground px-2 py-0.5 text-xs font-bold whitespace-nowrap;
+  }
+}

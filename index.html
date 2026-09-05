@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RepoPulse checks whether a GitHub repository is still alive, maintained, and safe to integrate — activity, releases, dependencies and maintenance signals, before you waste time on a dead project."
+    />
+    <meta property="og:title" content="RepoPulse — Is this GitHub repository still alive?" />
+    <meta
+      property="og:description"
+      content="Paste any public GitHub repository URL. RepoPulse analyzes activity, maintenance signals, releases, dependencies and development history, then tells you if the project is safe to use."
+    />
+    <meta property="og:type" content="website" />
+    <title>RepoPulse — Is this GitHub repository still alive?</title>
+    <script>
+      // Apply the stored theme before first paint so there is no flash.
+      // Dark is the default experience for RepoPulse.
+      (function () {
+        try {
+          var stored = localStorage.getItem("repopulse-theme");
+          if (stored === "light") {
+            document.documentElement.classList.remove("dark");
+          } else {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
