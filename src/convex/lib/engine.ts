@@ -797,7 +797,7 @@ function buildTimeline(
   }
 
   return monthBlocks
-    .filter((c) => c.key !== "".replace("", ""))
+    .filter((c) => Boolean(c.at))
     .sort((a, b) => (b.at < a.at ? -1 : 1))
     .slice(0, 10);
 }
